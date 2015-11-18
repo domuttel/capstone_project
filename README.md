@@ -1,28 +1,38 @@
-# Capstone project
-## ARCHITECTURE TOUR
+## Capstone // title: TBA
+### About
+#### My focus is to build a platform that connects architecture to people via geo-location. Users can find surrounding architecture, can make and record routes to see the sites, and can comment on the sites themselves.
+#### *MVP* : The city of Denver, log specific site,
+### Pre-project
+1. Flow chart ~ Flinto
 
-### Summary
-An app that allows users to use their geolocation to find architecture around them. For use in planning day trips souly around architecture or for finding architecture that is on your way to your next location.
+### Frontend functionality
+1. guest
+  - no login
+  - only shows within 20mile radius to demonstrate the basic app.
+2. user
+  - login
+  - search options like style, era, size, by architect, etc...
+  - access to all backend info ~ see Backend
+3. polished UX/UI
+4. responsive
 
-### Technologies
-- MEAN Stack
- - Express backend serving mostly json
- - Angular
- - MongoDB
- - Node.js
-- Bower
+#### Technology
+- HTML
+- CSS
+- JS
+- SASS
+- Bourban
+- jQuery
+- JS Libraries ~ possibly
 - Gulp
-- Jasmine testing
-- sass
 
-### APIs
-- Googlemaps
+### Backend funtionality
+1. track a route - create & store routes
+2. view other routes - store routes
+3. comment on specific sites (architecture) - store use comments
+4. store users with password
 
-### MVP
-- The minimum viable product for this project will consist of finding architecture in and around Denver.
-
-### Additional information
-- responsive and elegant UX/UI
-- user login
-- comment on specific architecture
-- log your routes
+#### Technology
+- JS
+- MongoDB
+- Node
