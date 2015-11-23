@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../../../database.js');
+var dotenv = require('dotenv');
+dotenv.load();
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
