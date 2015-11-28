@@ -5,22 +5,20 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var swig = require('swig');
+var mongoose = require('mongoose');
 var dotenv = require('dotenv');
 dotenv.load();
 
 
-// *** routes *** //
-var routes = require('./routes/index.js');
+// *** config file *** //
+var config = require('../../_config.js');
 
 // *** express instance *** //
 var app = express();
 
-// *** view engine *** //
-var swig = new swig.Swig();
-app.engine('html', swig.renderFile);
-app.set('view engine', 'html');
-
+// *** routes *** //
+var mainRoutes = require('./routes/index.js');
+var authRoutes = require('./routes/auth.js');
 
 // *** static directory *** //
 app.set('views', path.join(__dirname, 'views'));
@@ -33,9 +31,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
 
+// *** mongoose ** //
+mongoose.connect(config.MONGO_URI);
 
 // *** main routes *** //
-app.use('/', routes);
+app.use('/', mainRoutes);
+app.use('/auth', authRoutes);
+
 
 
 // catch 404 and forward to error handler
